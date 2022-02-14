@@ -27,7 +27,12 @@ namespace Tre_Cases
             string CheerResult = fodbold_Object.CheerOrCelebrate(mål, afleveringer);
             Console.WriteLine(CheerResult);
 
+            Console.WriteLine("");
+            Console.WriteLine("Tryk Enter for at hoppe tilbage i navigations menuen");
             Console.ReadKey();
+            Console.Clear();
+            var program = new Program();
+            program.Run();
         }
     }
 }

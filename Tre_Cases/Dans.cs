@@ -64,6 +64,13 @@ namespace Tre_Cases
             //Bruger den forrige total class og putter int point ind, sosm hentes fra mit class libary
             Console.WriteLine(total.point);
 
+            Console.WriteLine("");
+            Console.WriteLine("Tryk Enter for at hoppe tilbage i navigations menuen");
+            Console.ReadKey();
+            Console.Clear();
+            var program = new Program();
+            program.Run();
+
 
         }
     }
