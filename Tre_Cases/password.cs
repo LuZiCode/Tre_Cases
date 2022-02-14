@@ -32,16 +32,41 @@ namespace Tre_Cases
             switch (mulighed)
             {
                 case '1':
+                        Console.Clear();
                         Console.WriteLine("Login til eksisterende bruger");
                         Console.WriteLine("");
-                        Console.WriteLine("Indtast brugernavn: ");
-                    break;
+                        Console.Write("Indtast brugernavn: ");
+                        string brugernavnlogin = Console.ReadLine();
+                        Console.Write("Indtast adgangskode: ");
+                        string adgangskodelogin = Console.ReadLine();
+
+                        string filePathlogin = @"C:\Users\luczie\Desktop\The Three Cases - CSharp\Tre_Cases\Data\brugernavn.txt";
+                        List<string> lineslogin = File.ReadAllLines(filePathlogin).ToList();
+                        string filePathlogin2 = @"C:\Users\luczie\Desktop\The Three Cases - CSharp\Tre_Cases\Data\adgangskode.txt";
+                        List<string> lineslogin2 = File.ReadAllLines(filePathlogin2).ToList();
+
+                        if (File.ReadAllLines(filePathlogin).Contains(brugernavnlogin) && File.ReadAllLines(filePathlogin2).Contains(adgangskodelogin))
+                        {
+                            Console.Clear();
+                            Console.WriteLine("Du er nu logget ind");
+                            Console.WriteLine("Tryk Enter for at navigere ind i hovedmenuen");
+                            accepterellerik = true;
+                            Console.ReadKey();
+                        }
+                        else
+                        {
+                            Console.WriteLine("");
+                            Console.WriteLine("Brugernavnet eller adgangskoden er forkert!");
+                            Console.WriteLine("Tryk Enter for at prøve igen");
+                            Console.ReadKey();
+                        }
+                        break;
                 case '2':
                     Console.WriteLine("");
                     break;
                 case '3':
-                    string adgangskode = "";
-                    while(adgangskode.Length < 12)
+                    Boolean adgangskodelength = false;
+                    while (adgangskodelength == false)
                     {
                     Console.Clear();
                     Console.WriteLine("Opret en ny bruger:");
@@ -50,11 +75,12 @@ namespace Tre_Cases
                     string brugernavn = Console.ReadLine();
                     Console.WriteLine();
                     Console.Write("Indtast adgangskode: ");
-                    adgangskode = Console.ReadLine();
+                    string adgangskode = Console.ReadLine();
                     Console.WriteLine("");
 
                     if (brugernavn != null && adgangskode.Length >= 12)
                     {
+                        adgangskodelength=true;
                         string adgangskode2 = "";
                         while (adgangskode != adgangskode2)
                         {
@@ -63,12 +89,17 @@ namespace Tre_Cases
 
                         if (adgangskode == adgangskode2)
                         {
-                            string filePath = @"C:\Users\luczie\Desktop\The Three Cases - CSharp\Tre_Cases\Data\adgangskode.txt";
-                            List<string> lines = File.ReadAllLines(filePath).ToList();
-                            lines.Add(brugernavn); lines.Add(adgangskode);
-                            File.WriteAllLines(filePath, lines);
+                            string filePathadgangskode = @"C:\Users\luczie\Desktop\The Three Cases - CSharp\Tre_Cases\Data\adgangskode.txt";
+                            List<string> linesadgangskode = File.ReadAllLines(filePathadgangskode).ToList();
+                            linesadgangskode.Add(adgangskode);
+                            File.WriteAllLines(filePathadgangskode, linesadgangskode);
 
-                            Console.Clear();
+                            string filePathbrugernavn = @"C:\Users\luczie\Desktop\The Three Cases - CSharp\Tre_Cases\Data\brugernavn.txt";
+                            List<string> linesbrugernavn = File.ReadAllLines(filePathbrugernavn).ToList();
+                            linesbrugernavn.Add(brugernavn);
+                            File.WriteAllLines(filePathbrugernavn, linesbrugernavn);
+
+                                        Console.Clear();
                             Console.WriteLine("Du har nu oprettet en ny bruger!");
                             Console.WriteLine("Tryk Enter for, at navigere tilbage til login menuen");
                             Console.ReadKey();
