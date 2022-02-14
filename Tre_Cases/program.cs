@@ -8,10 +8,12 @@ namespace Tre_Cases
 {
     internal class Program
     {
-        static void Main(string[] args)
-        {
 
-            Console.WriteLine("Velkommen");
+        internal void Run()
+        {  
+
+
+            Console.WriteLine("|Navigations Menu|");
             Console.WriteLine("Hvor vil du gerne navigere hen?");
             Console.WriteLine("");
             Console.WriteLine("1 - Fodbold");
@@ -41,6 +43,7 @@ namespace Tre_Cases
             }
             Console.ReadKey();
             Console.Clear();
+            
         }
 
     }
