@@ -62,9 +62,57 @@ namespace Tre_Cases
                         }
                         break;
                 case '2':
-                    Console.WriteLine("");
-                    break;
-                case '3':
+                        Console.Clear();
+                        Console.WriteLine("Ændre din adgangskode");
+                        Console.WriteLine("");
+                        Console.WriteLine("Login til eksisterende bruger for at ændre adgangskode");
+                        Console.WriteLine("");
+                        Console.Write("Indtast brugernavn: ");
+                        string brugernavnchange = Console.ReadLine();
+                        Console.Write("Indtast adgangskode: ");
+                        string adgangskodechange = Console.ReadLine();
+
+                        string filePathchangepass = @"C:\Users\luczie\Desktop\The Three Cases - CSharp\Tre_Cases\Data\brugernavn.txt";
+                        List<string> lineschangepass = File.ReadAllLines(filePathchangepass).ToList();
+                        string filePathchangepass2 = @"C:\Users\luczie\Desktop\The Three Cases - CSharp\Tre_Cases\Data\adgangskode.txt";
+                        List<string> lineschangepass2 = File.ReadAllLines(filePathchangepass2).ToList();
+
+                        if (File.ReadAllLines(filePathchangepass).Contains(brugernavnchange) && File.ReadAllLines(filePathchangepass2).Contains(adgangskodechange))
+                        {
+                            Boolean ChangePass = false;
+                            while (ChangePass == false)
+                            {
+                                Console.Clear();
+                                Console.Write("Skriv din nye adgangskode for at ændre den: ");
+                                string newpass = Console.ReadLine();
+                                Console.Write("Gentag din nye adgangskode: ");
+                                string newpass2 = Console.ReadLine();
+
+                                if (newpass == newpass2)
+                                {
+                                    File.WriteAllText(filePathchangepass2, newpass2);
+                                    Console.WriteLine("Du har nu ændret kodeordet");
+                                    ChangePass = true;
+                                }
+                                else
+                                {
+                                    Console.Clear();
+                                    Console.WriteLine("Koden matcher ikke");
+                                    Console.WriteLine("Tryk Enter for at prøve igen");
+                                    Console.ReadKey();
+                                }
+                            }
+                            Console.ReadKey();
+                        }
+                        else
+                        {
+                            Console.WriteLine("");
+                            Console.WriteLine("Brugernavnet eller adgangskoden er forkert!");
+                            Console.WriteLine("Tryk Enter for at prøve igen");
+                            Console.ReadKey();
+                        }
+                        break;
+                    case '3':
                     Boolean adgangskodelength = false;
                     while (adgangskodelength == false)
                     {
