@@ -45,7 +45,6 @@
   <ItemGroup>
     <Compile Include="Dans.cs" />
     <Compile Include="fodbold.cs" />
-    <Compile Include="password.cs" />
     <Compile Include="program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
