@@ -20,7 +20,7 @@ Inde i navigations menuen kan du vælge mellem 2 forskellige cases
 (1) Fodbold menuen
 (2) Dans menuen
 
-#Fodbold Menu
+# Fodbold Menu (fodbold.cs, internal void Run())
 Denne menu bruges til at udregne hvordan fodboldsfans skal reagerer til en kamp ved hjælp af en string og en int. Stringen håndterer mål og inten håndterer afleveringer
 
 Du vil blive spurgt om der er scoret et mål og hvor mange afleveringer der er lavet i kampen
@@ -50,7 +50,7 @@ Afleveringerinput: 0 afleveringer
 (3) Eksempel på Output
 Output: Shh
 
-#Dans Menu
+# Dans Menu (dans.cs, internal void Run())
 Denne menu bruges til at udregne to individuelles dansers point og navne, udregner pointene ved at ligge dem sammen.
 
 Der vil blive spurgt om den første dansers navn og derefter personens point.
