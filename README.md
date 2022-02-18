@@ -1,13 +1,13 @@
 # Tre_Cases 
 Tre Cases i en Solution Explorer med en main navigation menu, som der kræves adgang til via et brugernavn & adgangskode.
 
-# Main Program (program.cs, static voic Main)
+# Main Program (program.cs, static void Main)
 For at kunne få fat i navigationsmenuen, skal du oprette et brugernavn og en adgangskode
 
 Dit brugernavn må ikke være tomt
-Din adgangskode skal minimun være 12 karakterer lang
-Din adgangskode skal minimun indebære 2 forskellige speciale karakterer
-Din adgangskode skal minimun indebære 2 forskellige tal
+Din adgangskode skal minimum være 12 karakterer lang
+Din adgangskode skal minimum indebære 2 forskellige speciale karakterer
+Din adgangskode skal minimum indebære 2 forskellige tal
 
 Når du har oprettet en bruger gemmer den brugernavnet i tekstfilen under \Data\brugernavn.txt og adgangskoden i \Data\brugernavn.txt
 Husk at ændre stigen i koden, så den passer til din mappes fil (Se program.cs på linje 50-52, 88 og 209)
